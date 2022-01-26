@@ -24,7 +24,7 @@ const Navbar = () => {
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <Link
                                         to='/'
-                                        className=" hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
+                                        className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Home
                                     </Link>
@@ -37,24 +37,10 @@ const Navbar = () => {
                                     </Link>
 
                                     <Link
-                                        to='/'
+                                        to='/sign_in'
                                         className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
-                                        Projects
-                                    </Link>
-
-                                    <Link
-                                        to='/'
-                                        className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
-                                    >
-                                        Calendar
-                                    </Link>
-
-                                    <Link
-                                        to='/'
-                                        className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
-                                    >
-                                        Reports
+                                        Sign In
                                     </Link>
                                 </div>
                             </div>
@@ -129,28 +115,14 @@ const Navbar = () => {
                                     to='/'
                                     className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full text-white w-32 text-center block px-3 py-1 mt-2 text-sm font-medium"
                                 >
-                                    Team
+                                    Blogs
                                 </Link>
 
                                 <Link
-                                    to='/'
-                                    className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white w-32 text-center block px-3 py-1 mt-2 text-sm font-medium"
-                                >
-                                    Projects
-                                </Link>
-
-                                <Link
-                                    to='/'
-                                    className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white w-32 text-center px-3 py-1 block mt-2 text-sm font-medium"
-                                >
-                                    Calendar
-                                </Link>
-
-                                <Link
-                                    to='/'
+                                    to='/sign_in'
                                     className="hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full  text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
                                 >
-                                    Reports
+                                    Sign In
                                 </Link>
                             </div>
                         </div>

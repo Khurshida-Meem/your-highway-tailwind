@@ -5,24 +5,31 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+import SignIn from './Pages/SignIn/SignIn/SignIn';
+import NotFound from './Pages/NotFound/NotFound';
+import SignUp from './Pages/SignIn/SignUp/SignUp';
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="*">
-            <Home />
-          </Route>
-        </Switch>
-      </Router >
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/sign_in">
+          <SignIn />
+        </Route>
+        <Route path="/sign_up">
+          <SignUp />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </Router >
   );
 }
 

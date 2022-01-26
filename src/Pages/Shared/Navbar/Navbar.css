@@ -1,3 +1,8 @@
 .nav-bg {
     background-color: #005a87b6;
 }
+
+.navlink.active {
+    background-color: white;
+    color: black;
+}

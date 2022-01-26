@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+body {
+  font-family: 'Merriweather',
+    serif;
+}
+
 .color1 {
   color: #005A87;
 }
@@ -16,4 +23,18 @@
 
 .color5 {
   color: #97F3FA;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #005A87, #49E2EE);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  box-shadow: 3px 3px 6px gray;
+}
+
+.link-text {
+  color: #017DAB;
 }
