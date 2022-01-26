@@ -1,0 +1,26 @@
+.banner-bg {
+    background-image: url('../../../images/banner.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    height: 80vh;
+    width: 100%;
+
+    background-size: cover;
+
+}
+
+.banner-bg::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #005a877e;
+}
+
+.banner-content {
+    position: relative;
+
+}
