@@ -41,18 +41,18 @@ const Navbar = () => {
 
                                     <NavLink
                                         to='/blogs'
-                                        className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
+                                        className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Blogs
                                     </NavLink>
                                     {user.email ? <NavLink
                                         to='/dashboard'
-                                        className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
+                                        className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Profile
                                     </NavLink> : <NavLink
                                         to='/sign_in'
-                                        className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
+                                        className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Sign In
                                     </NavLink>}
@@ -137,26 +137,32 @@ const Navbar = () => {
                             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                                 <NavLink
                                     to='/home'
-                                    className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full block w-32 text-center text-white px-3 py-1 text-sm font-medium"
+                                    className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full block w-32 text-center text-white px-3 py-1 text-sm font-medium"
                                 >
                                     Home
                                 </NavLink>
+                                <NavLink
+                                    to='/services'
+                                    className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full block w-32 text-center text-white px-3 py-1 text-sm font-medium"
+                                >
+                                    Services
+                                </NavLink>
 
                                 <NavLink
-                                    to='/'
-                                    className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full text-white w-32 text-center block px-3 py-1 mt-2 text-sm font-medium"
+                                    to='/blogs'
+                                    className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full text-white w-32 text-center block px-3 py-1 mt-2 text-sm font-medium"
                                 >
                                     Blogs
                                 </NavLink>
 
                                 {user.email ? <NavLink
                                     to='/dashboard'
-                                    className="hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
+                                    className="navlink hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
                                 >
                                     Profile
                                 </NavLink> : <NavLink
                                     to='/sign_in'
-                                    className="hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
+                                    className="navlink hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
                                 >
                                     Sign In
                                 </NavLink>}

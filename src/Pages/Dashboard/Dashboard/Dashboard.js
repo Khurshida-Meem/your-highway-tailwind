@@ -84,7 +84,7 @@ const Dashboard = () => {
                         <li className='nav-text'>
                             <Link to={`${url}/add_blog`} >
                                 <AiIcons.AiFillHome />
-                                <span>Add Blog</span>
+                                <span className="nav-span">Add Blog</span>
                             </Link>
                         </li>
                         {SidebarData.map((item, index) => {
@@ -92,7 +92,7 @@ const Dashboard = () => {
                                 <li key={index} className={item.cName}>
                                     <Link to={item.path}>
                                         {item.icon}
-                                        <span>{item.title}</span>
+                                        <span className="nav-span">{item.title}</span>
                                     </Link>
                                 </li>
                             );
