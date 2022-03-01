@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    const [admin, setAdmin] = useState(false);
+    // const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
 
@@ -22,7 +22,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to the database
-                saveUser(email, name, 'POST');
+                // saveUser(email, name, 'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -59,8 +59,8 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                const user = result.user;
-                saveUser(user.email, user.displayName, 'PUT');
+                // const user = result.user;
+                // saveUser(user.email, user.displayName, 'PUT');
                 setError('');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -84,11 +84,11 @@ const useFirebase = () => {
     }, [auth])
 
     // for admin and normal user check
-    useEffect(() => {
-        fetch(`https://sparkle-beauty.herokuapp.com/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-    }, [user.email])
+    // useEffect(() => {
+    //     fetch(`https://sparkle-beauty.herokuapp.com/users/${user.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setAdmin(data.admin))
+    // }, [user.email])
 
     // signout
     const logOut = () => {
@@ -99,24 +99,22 @@ const useFirebase = () => {
     }
 
     // save user to db
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
-        fetch('https://sparkle-beauty.herokuapp.com/users', {
-            method: method,
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then()
-    }
+    // const saveUser = (email, displayName, method) => {
+    //     const user = { email, displayName };
+    //     fetch('https://sparkle-beauty.herokuapp.com/users', {
+    //         method: method,
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //         .then()
+    // }
 
     return {
         user,
-        admin,
         isLoading,
         error,
-        saveUser,
         setError,
         setUser,
         setIsLoading,

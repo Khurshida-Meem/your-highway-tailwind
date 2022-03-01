@@ -1,0 +1,11 @@
+.add-blog {
+  /* background-image: url('../../../images/add-blog.gif');
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover; */
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}

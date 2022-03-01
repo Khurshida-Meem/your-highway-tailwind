@@ -8,28 +8,39 @@ import Home from './Pages/Home/Home/Home';
 import SignIn from './Pages/SignIn/SignIn/SignIn';
 import NotFound from './Pages/NotFound/NotFound';
 import SignUp from './Pages/SignIn/SignUp/SignUp';
+import AuthProvider from './contexts/AuthProvider';
+import AddBlog from './Pages/Dashboard/AddBlog/AddBlog';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/sign_in">
-          <SignIn />
-        </Route>
-        <Route path="/sign_up">
-          <SignUp />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-    </Router >
+    <AuthProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/sign_in">
+            <SignIn />
+          </Route>
+          <Route path="/sign_up">
+            <SignUp />
+          </Route>
+          <Route path="/add_blog">
+            <AddBlog />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </Router >
+    </AuthProvider>
   );
 }
 

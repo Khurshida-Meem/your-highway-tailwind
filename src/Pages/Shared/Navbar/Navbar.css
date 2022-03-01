@@ -2,6 +2,10 @@
     background-color: #005a87b6;
 }
 
+.navlink {
+    transition: 0.3s;
+}
+
 .navlink.active {
     background-color: white;
     color: black;

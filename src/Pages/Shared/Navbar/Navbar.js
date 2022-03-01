@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Transition } from "@headlessui/react";
 import './Navbar.css';
+import useAuth from '../../../hooks/useAuth';
+import LetteredAvatar from 'react-lettered-avatar';
 
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const { firebaseContext } = useAuth();
+    const { user, logOut } = firebaseContext;
 
     return (
         <div className='banner-content'>
@@ -22,29 +26,56 @@ const Navbar = () => {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
-                                    <Link
-                                        to='/'
-                                        className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
+                                    <NavLink
+                                        to='/home'
+                                        className="navlink hover:bg-white hover:text-black border-white  border-2 border-solid rounded-full   text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Home
-                                    </Link>
+                                    </NavLink>
+                                    <NavLink
+                                        to='/services'
+                                        className="navlink hover:bg-white hover:text-black border-white  border-2 border-solid rounded-full   text-white px-3 py-1 text-sm font-medium"
+                                    >
+                                        Services
+                                    </NavLink>
 
-                                    <Link
-                                        to='/home'
+                                    <NavLink
+                                        to='/blogs'
                                         className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Blogs
-                                    </Link>
-
-                                    <Link
+                                    </NavLink>
+                                    {user.email ? <NavLink
+                                        to='/dashboard'
+                                        className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
+                                    >
+                                        Profile
+                                    </NavLink> : <NavLink
                                         to='/sign_in'
                                         className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full  text-white px-3 py-1 text-sm font-medium"
                                     >
                                         Sign In
-                                    </Link>
+                                    </NavLink>}
+
                                 </div>
                             </div>
                         </div>
+                        {user.email && <div className="hidden md:block">
+                            <div className="ml-4 flex items-center md:ml-6">
+                                {user.photoURL ? <img className="h-12 w-12 rounded-full" src={user.photoURL} alt="" /> : <LetteredAvatar
+                                    name={user.displayName}
+                                    className="h-6 w-6"
+                                    radius={50}
+                                    color="#fff"
+                                    backgroundColor="rgb(55,55,22)"
+                                // backgroundColors={arrayWithColors}
+                                />}
+                                <button onClick={logOut} className='ml-3 p-2 text-white nav-btn'>Sign Out</button>
+                            </div>
+
+                        </div>
+                        }
+
                         <div className="-mr-2 flex md:hidden">
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -104,26 +135,31 @@ const Navbar = () => {
                     {(ref) => (
                         <div className="md:hidden" id="mobile-menu">
                             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                                <Link
-                                    to='/'
+                                <NavLink
+                                    to='/home'
                                     className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full block w-32 text-center text-white px-3 py-1 text-sm font-medium"
                                 >
-                                    Dashboard
-                                </Link>
+                                    Home
+                                </NavLink>
 
-                                <Link
+                                <NavLink
                                     to='/'
                                     className="hover:bg-white hover:text-black border-white border-2 border-solid rounded-full text-white w-32 text-center block px-3 py-1 mt-2 text-sm font-medium"
                                 >
                                     Blogs
-                                </Link>
+                                </NavLink>
 
-                                <Link
+                                {user.email ? <NavLink
+                                    to='/dashboard'
+                                    className="hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
+                                >
+                                    Profile
+                                </NavLink> : <NavLink
                                     to='/sign_in'
-                                    className="hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full  text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
+                                    className="hover:bg-white hover:text-black block border-white border-2 border-solid rounded-full text-white px-3 w-32 text-center py-1 text-sm mt-2 font-medium"
                                 >
                                     Sign In
-                                </Link>
+                                </NavLink>}
                             </div>
                         </div>
                     )}
