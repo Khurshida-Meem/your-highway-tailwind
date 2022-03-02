@@ -1,0 +1,21 @@
+.rating {
+    margin: 10px 0;
+}
+
+.fa-star {
+    color: goldenrod;
+}
+
+.fa-users {
+    color: #ef4565;
+    margin-bottom: 5px;
+}
+
+.addPlan {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.single-card-h2 {
+    color: #ef4565;
+}
