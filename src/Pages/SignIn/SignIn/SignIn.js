@@ -25,7 +25,7 @@ const SignIn = () => {
 
     return (
         <div className='container'>
-            <div className='grid md:grid-cols-2 gap-4'>
+            <div className='form-bg grid md:grid-cols-2 gap-4 p-6'>
                 <div className='flex justify-center items-center'>
                     <div>
                         <form className='form-inputs text-center mt-12' onSubmit={handleSubmit(onSubmit)}>

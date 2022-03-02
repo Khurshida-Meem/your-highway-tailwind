@@ -1,3 +1,7 @@
+.form-bg {
+    background-color: white;
+}
+
 .form-inputs input {
     display: block;
     outline: none;
@@ -9,6 +13,7 @@
 
 .field {
     background-color: rgb(227, 242, 255);
+    border-left: 3px solid #005A87;
 }
 
 .form-inputs input:hover {
