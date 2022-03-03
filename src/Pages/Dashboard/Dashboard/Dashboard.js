@@ -64,7 +64,7 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
 
     const { firebaseContext } = useAuth();
-    const { user, logOut } = firebaseContext;
+    const { user } = firebaseContext;
 
     return (
 
@@ -123,11 +123,8 @@ const Dashboard = () => {
                 </nav>
                 <div className='container'>
                     <Switch>
-                        {/* <Route exact path={path}>
-                            {admin ? <MakeAdmin></MakeAdmin> : <MyOrders></MyOrders>}
 
-                        </Route> */}
-                        <Route path={`${path}`} >
+                        <Route exact path={path} >
                             <AddBlog></AddBlog>
                         </Route>
                         <Route path={`${path}/add_blog`} >
@@ -137,25 +134,7 @@ const Dashboard = () => {
                             <MyBlogs></MyBlogs>
                         </Route>
 
-                        {/* for admin */}
-                        {/* <AdminRoute path={`${path}/all_orders`} >
-                            <AllOrders></AllOrders>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/orders_category`} >
-                            <OrderByCatagory></OrderByCatagory>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/make_admin`} >
-                            <MakeAdmin></MakeAdmin>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/add_product`} >
-                            <AddProduct></AddProduct>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/all_reviews`} >
-                            <AllReviews></AllReviews>
-                        </AdminRoute>
-                        <AdminRoute path={`${path}/manage_products`} >
-                            <AllProducts></AllProducts>
-                        </AdminRoute> */}
+
                     </Switch>
                 </div>
             </IconContext.Provider>

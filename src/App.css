@@ -66,8 +66,7 @@ p {
   box-shadow: 3px 3px 6px gray;
 }
 
-.add-blog,
-.dash-content {
+.add-blog {
   display: flex;
   height: 90vh;
   align-items: center;

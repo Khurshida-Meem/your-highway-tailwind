@@ -1,4 +1,5 @@
 import React from 'react';
+import Blogs from '../Blogs/Blogs/Blogs';
 import Places from '../Places/Places';
 
 const Divider = () => {
@@ -12,7 +13,7 @@ const Divider = () => {
 
                 {/* =============== featured destination ============== */}
                 <div>
-                    <h1>Featured Spots</h1>
+                    <Blogs></Blogs>
                 </div>
             </div>
         </div>
