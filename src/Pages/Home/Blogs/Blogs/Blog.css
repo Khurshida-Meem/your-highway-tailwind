@@ -1,3 +1,14 @@
 .home-blog {
     background-color: #094067;
 }
+
+.blog-btn {
+    border: none;
+    color: #e16162;
+    font-size: 20px;
+    background: none;
+}
+
+.fa-heart:hover {
+    font-weight: 700;
+}
