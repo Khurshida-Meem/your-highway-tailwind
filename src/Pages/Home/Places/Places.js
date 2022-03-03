@@ -12,7 +12,7 @@ const Places = () => {
     // load data
     useEffect(() => {
         // fetch('./fakeData.JSON')
-        fetch('https://raw.githubusercontent.com/Khurshida-Meem/fake-Datas/main/Your%20Highwy/fakedata.json')
+        fetch('https://your-highway-travel.herokuapp.com/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])

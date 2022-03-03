@@ -4,7 +4,7 @@ import './Place.css'
 
 const Place = (props) => {
 
-    const { destination, thumb, country, cost, star, starCount } = props.place;
+    const { destination, thumb, star, starCount } = props.place;
 
     return (
         <div>

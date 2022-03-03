@@ -15,6 +15,7 @@ import {
     useRouteMatch
 } from 'react-router-dom';
 import AddBlog from '../AddBlog/AddBlog';
+import MyBlogs from '../MyBlogs/MyBlogs';
 
 const SidebarData = [
     {
@@ -87,16 +88,37 @@ const Dashboard = () => {
                                 <span className="nav-span">Add Blog</span>
                             </Link>
                         </li>
-                        {SidebarData.map((item, index) => {
-                            return (
-                                <li key={index} className={item.cName}>
-                                    <Link to={item.path}>
-                                        {item.icon}
-                                        <span className="nav-span">{item.title}</span>
-                                    </Link>
-                                </li>
-                            );
-                        })}
+                        <li className='nav-text'>
+                            <Link to={`${url}/my_blogs`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">My Blogs</span>
+                            </Link>
+                        </li>
+                        <li className='nav-text'>
+                            <Link to={`${url}/add_blog`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Manage Service</span>
+                            </Link>
+                        </li>
+                        <li className='nav-text'>
+                            <Link to={`${url}/add_blog`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Manage Place</span>
+                            </Link>
+                        </li>
+                        <li className='nav-text'>
+                            <Link to={`${url}/add_blog`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Add Review</span>
+                            </Link>
+                        </li>
+                        <li className='nav-text'>
+                            <Link to={`${url}/add_blog`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Manage Review</span>
+                            </Link>
+                        </li>
+
                     </ul>
                 </nav>
                 <div className='container'>
@@ -110,6 +132,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/add_blog`} >
                             <AddBlog></AddBlog>
+                        </Route>
+                        <Route path={`${path}/my_blogs`} >
+                            <MyBlogs></MyBlogs>
                         </Route>
 
                         {/* for admin */}
