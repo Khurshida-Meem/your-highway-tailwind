@@ -33,10 +33,10 @@ const Navbar = () => {
                                         Home
                                     </NavLink>
                                     <NavLink
-                                        to='/services'
+                                        to='/all_places'
                                         className="navlink hover:bg-white hover:text-black border-white  border-2 border-solid rounded-full   text-white px-3 py-1 text-sm font-medium"
                                     >
-                                        Services
+                                        Destinations
                                     </NavLink>
 
                                     <NavLink
@@ -142,10 +142,10 @@ const Navbar = () => {
                                     Home
                                 </NavLink>
                                 <NavLink
-                                    to='/services'
+                                    to='/all_places'
                                     className="navlink hover:bg-white hover:text-black border-white border-2 border-solid rounded-full block w-32 text-center text-white px-3 py-1 text-sm font-medium"
                                 >
-                                    Services
+                                    Destinations
                                 </NavLink>
 
                                 <NavLink

@@ -12,7 +12,7 @@
   border: none;
   border-radius: 5px;
   transition: 0.3s;
-  border-left: px solid #005A87;
+  border-left: 3px solid #005A87;
 }
 
 .dash-input:hover {

@@ -12,6 +12,7 @@ import AuthProvider from './contexts/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import FullBlog from './Pages/Home/Blogs/FullBlog/FullBlog';
+import AllPlaces from './Pages/AllPlaces/AllPlaces';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/sign_up">
             <SignUp />
+          </Route>
+          <Route path="/all_places">
+            <AllPlaces />
           </Route>
           <PrivateRoute path='/blog/:blogId'>
             <FullBlog />

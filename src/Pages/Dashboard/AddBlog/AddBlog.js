@@ -33,13 +33,13 @@ const AddBlog = () => {
                 <h1 className='text-2xl my-8'> <span className='component-header px-10 py-2'>Add Your Blog</span></h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
-                    <input className='dash-input mb-3 p-2' defaultValue={user.displayName} {...register("username", { required: true })} />
+                    <input className='dash-input mb-3 p-2 w-full' defaultValue={user.displayName} {...register("username", { required: true })} />
 
                     {/* include validation with required or other standard HTML validation rules */}
-                    <input className='dash-input mb-3 p-2' type="email" defaultValue={user.email} {...register("email", { required: true })} />
-                    <input className='dash-input mb-3 p-2' type="text" placeholder='Your Blog Title' {...register("title", { required: true })} />
-                    <input className='dash-input mb-3 p-2' type="link" placeholder="Your Image Live Link" {...register("thumb", { required: true })} />
-                    <textarea className="dash-input mb-3 p-2" id="" cols="25" rows="10" placeholder="Add Your Thought" {...register("blog", { required: true })} />
+                    <input className='dash-input mb-3 p-2 w-full' type="email" defaultValue={user.email} {...register("email", { required: true })} />
+                    <input className='dash-input mb-3 p-2 w-full' type="text" placeholder='Your Blog Title' {...register("title", { required: true })} />
+                    <input className='dash-input mb-3 p-2 w-full' type="link" placeholder="Your Image Live Link" {...register("thumb", { required: true })} />
+                    <textarea className="dash-input mb-3 p-2 w-full" id="" cols="25" rows="10" placeholder="Add Your Thought" {...register("blog", { required: true })} />
                     {/* errors will return when field validation fails  */}
                     {/* {errors.exampleRequired && <span className='block'>This field is required</span>} */}
 
