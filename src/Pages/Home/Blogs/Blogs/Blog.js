@@ -9,6 +9,7 @@ const Blog = (props) => {
     const [count, setCount] = useState(likes);
 
     return (
+
         <div className='home-blog m-3 p-2 grid md:grid-cols-3 gap-2 rounded-md'>
             <div className="col-span-1">
                 <img className='rounded-md' src={thumb} alt="" />

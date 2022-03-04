@@ -16,6 +16,7 @@ import {
 } from 'react-router-dom';
 import AddBlog from '../AddBlog/AddBlog';
 import MyBlogs from '../MyBlogs/MyBlogs';
+import AllBlogs from '../AllBlogs/AllBlogs';
 
 const SidebarData = [
     {
@@ -83,6 +84,12 @@ const Dashboard = () => {
                             </Link>
                         </li>
                         <li className='nav-text'>
+                            <Link to='/home' >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Home</span>
+                            </Link>
+                        </li>
+                        <li className='nav-text'>
                             <Link to={`${url}/add_blog`} >
                                 <AiIcons.AiFillHome />
                                 <span className="nav-span">Add Blog</span>
@@ -92,6 +99,12 @@ const Dashboard = () => {
                             <Link to={`${url}/my_blogs`} >
                                 <AiIcons.AiFillHome />
                                 <span className="nav-span">My Blogs</span>
+                            </Link>
+                        </li>
+                        <li className='nav-text'>
+                            <Link to={`${url}/all_blogs`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Manage All Blogs</span>
                             </Link>
                         </li>
                         <li className='nav-text'>
@@ -132,6 +145,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/my_blogs`} >
                             <MyBlogs></MyBlogs>
+                        </Route>
+                        <Route path={`${path}/all_blogs`} >
+                            <AllBlogs></AllBlogs>
                         </Route>
 
 

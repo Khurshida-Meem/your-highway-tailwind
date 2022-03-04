@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Blog from './Blog'
+import AllBlog from './AllBlog';
 
-const Blogs = () => {
+const AllBlogs = () => {
 
     const [blogs, setBlogs] = useState([]);
-
     useEffect(() => {
         fetch('https://your-highway-travel.herokuapp.com/blogs')
             .then(res => res.json())
@@ -16,25 +15,18 @@ const Blogs = () => {
             })
     }, [blogs])
 
-    const approvedBlogs = blogs.filter(blog => blog.status === 'Approved');
-    approvedBlogs.splice(6, blogs.length);
-
-
     return (
-        <div className='container'>
-            <div className='grid grid-cols-1 gap-4 mt-20'>
-                <h1 className='text-center text-3xl mb-10'> <span className='component-header px-10 py-2'>Featured Blogs</span></h1>
+        <div className='dash-content'>
+            <div className='container mt-26'>
                 <div>
-                    {approvedBlogs.map((blog) => <Blog
+                    {blogs.map((blog) => <AllBlog
                         key={blog._id}
                         blog={blog}
-                    ></Blog>)}
+                    ></AllBlog>)}
                 </div>
-
             </div>
-
         </div>
     );
 };
 
-export default Blogs;
+export default AllBlogs;
