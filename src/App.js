@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import FullBlog from './Pages/Home/Blogs/FullBlog/FullBlog';
 import AllPlaces from './Pages/AllPlaces/AllPlaces';
+import AllBlogs from './Pages/AllBlogs/AllBlogs';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <PrivateRoute path='/blog/:blogId'>
             <FullBlog />
+          </PrivateRoute>
+          <PrivateRoute path='/blogs'>
+            <AllBlogs />
           </PrivateRoute>
           <PrivateRoute path="/dashboard">
             <Dashboard />
