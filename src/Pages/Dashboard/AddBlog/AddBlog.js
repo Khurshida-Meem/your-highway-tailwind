@@ -15,7 +15,8 @@ const AddBlog = () => {
     const onSubmit = data => {
         const likes = Math.floor(Math.random() * 10000);
         const status = 'Pending';
-        const blog = { data, likes, status }
+        const email = user.email;
+        const blog = { data, likes, status, email }
 
         axios.post('https://your-highway-travel.herokuapp.com/blogs', blog)
             .then(res => {

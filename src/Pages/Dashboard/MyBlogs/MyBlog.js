@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './MyBlog.css';
 
 const MyBlog = (props) => {
 
-    const { likes, status } = props.blog;
+    const { _id, likes, status } = props.blog;
     const { username, email, title, thumb, blog } = props.blog.data;
+
+
+    // get order by email 
+
+
+    // delete review
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure, you want to delete?');
+        if (proceed) {
+            const url = `https://your-highway-travel.herokuapp.com/blogs/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        if (data.modifiedCount > 0) {
+                            alert(`Blog ${status}`);
+                        }
+                    }
+
+                });
+        }
+    }
 
     return (
         <div className='blog-container m-5 p-5'>
@@ -16,13 +40,15 @@ const MyBlog = (props) => {
                     <p>{blog}</p>
                 </div>
                 <div>
-                    <img src={thumb} alt="" height="100px" />
+                    <img src={thumb} alt="" />
                 </div>
             </div>
             <div>
-
                 <h1>Likes: {likes}</h1>
                 <h1>Status: {status}</h1>
+            </div>
+            <div>
+                <button className='btn-primary text-white px-3 py-1 m-2' onClick={() => handleDelete(_id)} >Delete</button>
             </div>
 
         </div>
