@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../../hooks/useAuth';
-import Loader from "react-loader-spinner";
+import { Triangle } from 'react-loader-spinner'
 
 const PrivateRoute = ({ children, ...rest }) => {
 
@@ -10,8 +10,9 @@ const PrivateRoute = ({ children, ...rest }) => {
     if (isLoading) {
         // spinner
         return (
-            <div style={{ textAlign: 'center', marginTop: '16px' }}>
-                <Loader type="BallTriangle" color="#f8a5b8" height={80} width={80} />
+            <div className='container flex justify-center mt-10' >
+                <Triangle color="#ef4565" height={100} width={200}
+                />
             </div>
         )
     }

@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Blog.css'
 
 const Blog = (props) => {
 
-    const { likes } = props.blog;
+    const { _id, likes } = props.blog;
     const { username, title, thumb } = props.blog.data;
 
     const [count, setCount] = useState(likes);
+
+    const history = useHistory();
+    const handleDetailClick = () => {
+        history.push(`/blog/${_id}`)
+    }
 
     return (
 
@@ -24,7 +30,7 @@ const Blog = (props) => {
                         <p className='text-white'>{count}</p>
                     </div>
                     <div>
-                        <button className='btn-primary px-3 py-1 text-white mt-1' >Read Blog</button>
+                        <button onClick={handleDetailClick} className='btn-secondary px-3 py-1 text-white mt-1' >Read Full Blog</button>
                     </div>
                 </div>
             </div>

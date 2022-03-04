@@ -9,8 +9,9 @@ import SignIn from './Pages/SignIn/SignIn/SignIn';
 import NotFound from './Pages/NotFound/NotFound';
 import SignUp from './Pages/SignIn/SignUp/SignUp';
 import AuthProvider from './contexts/AuthProvider';
-import AddBlog from './Pages/Dashboard/AddBlog/AddBlog';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import FullBlog from './Pages/Home/Blogs/FullBlog/FullBlog';
 
 function App() {
   return (
@@ -29,12 +30,12 @@ function App() {
           <Route path="/sign_up">
             <SignUp />
           </Route>
-          <Route path="/add_blog">
-            <AddBlog />
-          </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path='/blog/:blogId'>
+            <FullBlog />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
+          </PrivateRoute>
           <Route path="*">
             <NotFound />
           </Route>

@@ -81,3 +81,8 @@ p {
   border-top: 3px solid #ef4565;
   border-bottom: 3px solid #ef4565;
 }
+
+.btn-secondary {
+  background-color: #ef4565;
+  border-radius: 5px;
+}
