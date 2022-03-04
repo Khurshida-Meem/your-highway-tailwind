@@ -17,6 +17,7 @@ import {
 import AddBlog from '../AddBlog/AddBlog';
 import MyBlogs from '../MyBlogs/MyBlogs';
 import AllBlogs from '../AllBlogs/AllBlogs';
+import AddPlace from '../AddPlace/AddPlace';
 
 const SidebarData = [
     {
@@ -108,9 +109,9 @@ const Dashboard = () => {
                             </Link>
                         </li>
                         <li className='nav-text'>
-                            <Link to={`${url}/add_blog`} >
+                            <Link to={`${url}/add_place`} >
                                 <AiIcons.AiFillHome />
-                                <span className="nav-span">Manage Service</span>
+                                <span className="nav-span">Add Place</span>
                             </Link>
                         </li>
                         <li className='nav-text'>
@@ -148,6 +149,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/all_blogs`} >
                             <AllBlogs></AllBlogs>
+                        </Route>
+                        <Route path={`${path}/add_place`} >
+                            <AddPlace></AddPlace>
                         </Route>
 
 
