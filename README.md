@@ -1,11 +1,11 @@
-# Hotel Ressort
+# Your Highway
 
-This project is live on [Live Site](https://your-highway.web.app/home).
+This project is live on [Live Site](https://your-highway.web.app).
 
 ## Available Features
 
-- dynamic service add
-- make bookings
-- show own bookings
-- show all bookings
-- delete bookings
+- dynamic destination add
+- make blog
+- show own blog
+- show all blogs
+- delete blogs
