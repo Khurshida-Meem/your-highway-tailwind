@@ -19,45 +19,8 @@ import MyBlogs from '../MyBlogs/MyBlogs';
 import AllBlogs from '../AllBlogs/AllBlogs';
 import AddPlace from '../AddPlace/AddPlace';
 import AllPlaces from '../AllPlaces/AllPlaces';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
-const SidebarData = [
-    {
-        title: 'Add Blog',
-        path: `/add_blog`,
-        icon: <AiIcons.AiFillHome />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Reports',
-        path: '/reports',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Products',
-        path: '/products',
-        icon: <FaIcons.FaCartPlus />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Team',
-        path: '/team',
-        icon: <IoIcons.IoMdPeople />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Messages',
-        path: '/messages',
-        icon: <FaIcons.FaEnvelopeOpenText />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Support',
-        path: '/support',
-        icon: <IoIcons.IoMdHelpCircle />,
-        cName: 'nav-text'
-    }
-];
 
 const Dashboard = () => {
 
@@ -121,6 +84,12 @@ const Dashboard = () => {
                                 <span className="nav-span">Manage All Places</span>
                             </Link>
                         </li>
+                        <li className='nav-text'>
+                            <Link to={`${url}/make_admin`} >
+                                <AiIcons.AiFillHome />
+                                <span className="nav-span">Make Admin</span>
+                            </Link>
+                        </li>
 
 
                     </ul>
@@ -145,6 +114,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/all_place`} >
                             <AllPlaces></AllPlaces>
+                        </Route>
+                        <Route path={`${path}/make_admin`} >
+                            <MakeAdmin></MakeAdmin>
                         </Route>
 
 

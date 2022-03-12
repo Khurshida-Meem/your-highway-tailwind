@@ -34,7 +34,7 @@ const SignUp = () => {
                             <input className='field p-3 mt-2 block' type="password" placeholder="Password*" {...register("password", { required: true })} />
                             {errors.password && <span className='error'>This field is required</span>}
                             {error && <span className='error'>{error}</span>}
-                            <button type="submit" className="mt-2 py-2 w-48 btn-primary text-white"><i className="fas fa-sign-in-alt"></i> Sign In</button>
+                            <button type="submit" className="mt-2 py-2 w-48 btn-primary text-white"><i className="fas fa-sign-in-alt"></i> Sign Up</button>
                         </form>
                         {/* ===========google login=============== */}
                         <hr className='m-3' />
