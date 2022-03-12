@@ -5,7 +5,7 @@ import Places from '../Places/Places';
 const Divider = () => {
     return (
         <div className="container mx-auto">
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3">
                 {/* =================== all blogs ===================== */}
                 <div className="col-span-2">
                     <Places></Places>

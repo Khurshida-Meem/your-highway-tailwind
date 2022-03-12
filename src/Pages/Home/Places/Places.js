@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useData from '../../../hooks/useData';
 import Place from './Place';
 
 const Places = () => {
@@ -20,7 +19,7 @@ const Places = () => {
     return (
         <div className='mt-20'>
             <h1 className='text-center text-3xl mb-16'> <span className='component-header px-10 py-2'>Top Destinations</span></h1>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 mx-3 ">
                 {
                     places.map(place => <Place
                         key={place._id}
