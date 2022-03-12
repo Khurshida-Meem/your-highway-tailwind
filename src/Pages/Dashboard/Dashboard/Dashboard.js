@@ -1,5 +1,3 @@
-// import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, MenuItem, Menu } from 'react-pro-sidebar';
-// import 'react-pro-sidebar/dist/css/styles.css';
 import './Dashboard.css';
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
@@ -20,6 +18,7 @@ import AllBlogs from '../AllBlogs/AllBlogs';
 import AddPlace from '../AddPlace/AddPlace';
 import AllPlaces from '../AllPlaces/AllPlaces';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AdminRoute from '../../AdminRoute/AdminRoute'
 
 
 const Dashboard = () => {
@@ -30,7 +29,7 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
 
     const { firebaseContext } = useAuth();
-    const { user } = firebaseContext;
+    const { admin, logOut } = firebaseContext;
 
     return (
 
@@ -54,41 +53,55 @@ const Dashboard = () => {
                                 <span className="nav-span">Home</span>
                             </Link>
                         </li>
+                        {admin || <div>
+                            <li className='nav-text'>
+                                <Link to={`${url}/add_blog`} >
+                                    <AiIcons.AiFillHome />
+                                    <span className="nav-span">Add Blog</span>
+                                </Link>
+                            </li>
+                            <li className='nav-text'>
+                                <Link to={`${url}/my_blogs`} >
+                                    <AiIcons.AiFillHome />
+                                    <span className="nav-span">My Blogs</span>
+                                </Link>
+                            </li>
+                        </div>}
+
+
+
+
+
+                        {admin && <div>
+                            <li className='nav-text'>
+                                <Link to={`${url}/all_blogs`} >
+                                    <AiIcons.AiFillHome />
+                                    <span className="nav-span">Manage All Blogs</span>
+                                </Link>
+                            </li>
+                            <li className='nav-text'>
+                                <Link to={`${url}/add_place`} >
+                                    <AiIcons.AiFillHome />
+                                    <span className="nav-span">Add Place</span>
+                                </Link>
+                            </li>
+                            <li className='nav-text'>
+                                <Link to={`${url}/all_place`} >
+                                    <AiIcons.AiFillHome />
+                                    <span className="nav-span">Manage All Places</span>
+                                </Link>
+                            </li>
+                            <li className='nav-text'>
+                                <Link to={`${url}/make_admin`} >
+                                    <AiIcons.AiFillHome />
+                                    <span className="nav-span">Make Admin</span>
+                                </Link>
+                            </li>
+                        </div>}
                         <li className='nav-text'>
-                            <Link to={`${url}/add_blog`} >
-                                <AiIcons.AiFillHome />
-                                <span className="nav-span">Add Blog</span>
-                            </Link>
-                        </li>
-                        <li className='nav-text'>
-                            <Link to={`${url}/my_blogs`} >
-                                <AiIcons.AiFillHome />
-                                <span className="nav-span">My Blogs</span>
-                            </Link>
-                        </li>
-                        <li className='nav-text'>
-                            <Link to={`${url}/all_blogs`} >
-                                <AiIcons.AiFillHome />
-                                <span className="nav-span">Manage All Blogs</span>
-                            </Link>
-                        </li>
-                        <li className='nav-text'>
-                            <Link to={`${url}/add_place`} >
-                                <AiIcons.AiFillHome />
-                                <span className="nav-span">Add Place</span>
-                            </Link>
-                        </li>
-                        <li className='nav-text'>
-                            <Link to={`${url}/all_place`} >
-                                <AiIcons.AiFillHome />
-                                <span className="nav-span">Manage All Places</span>
-                            </Link>
-                        </li>
-                        <li className='nav-text'>
-                            <Link to={`${url}/make_admin`} >
-                                <AiIcons.AiFillHome />
-                                <span className="nav-span">Make Admin</span>
-                            </Link>
+                            <button onClick={logOut} className="mt-8 mb-8 py-2 w-48 btn-primary text-white">
+                                <span>Sign Out</span>
+                            </button>
                         </li>
 
 
@@ -115,9 +128,9 @@ const Dashboard = () => {
                         <Route path={`${path}/all_place`} >
                             <AllPlaces></AllPlaces>
                         </Route>
-                        <Route path={`${path}/make_admin`} >
+                        <AdminRoute path={`${path}/make_admin`} >
                             <MakeAdmin></MakeAdmin>
-                        </Route>
+                        </AdminRoute>
 
 
                     </Switch>
