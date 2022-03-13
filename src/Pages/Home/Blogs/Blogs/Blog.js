@@ -36,7 +36,7 @@ const Blog = (props) => {
         //     </div>
 
         // </div>
-        <div className="flex justify-center items-center m-3">
+        <div className="flex justify-center items-center m-3 p-2">
             <div className="flex w-full mx-auto items-center">
                 <div className="flex home-blog p-4 rounded-lg">
                     <div className="flex flex-col w-2/3 pr-4 bg">

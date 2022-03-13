@@ -19,18 +19,20 @@ const AllPlaces = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='container flex justify-center'>
+            <div className='container mx-auto'>
                 {places.length ? <div>
-                    <h1 className='text-center text-3xl my-16 '> <span className='component-header px-10 py-2'>Top Destinations</span></h1>
-                    <div className="grid md:grid-cols-3 gap-4">
-                        {
-                            places.map(place => <Place
-                                key={place._id}
-                                place={place}
-                            >
+                    <div>
+                        <h1 className='text-center text-3xl my-16 '> <span className='component-header px-10 py-2'>Top Destinations</span></h1>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            {
+                                places.map(place => <Place
+                                    key={place._id}
+                                    place={place}
+                                >
 
-                            </Place>)
-                        }
+                                </Place>)
+                            }
+                        </div>
                     </div>
                 </div> :
                     <div className='container flex justify-center mt-10' >
