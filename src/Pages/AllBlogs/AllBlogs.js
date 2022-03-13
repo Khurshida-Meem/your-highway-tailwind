@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar'
 
 const AllBlogs = () => {
@@ -8,6 +9,7 @@ const AllBlogs = () => {
             <div className='container flex justify-center'>
                 <h1 className='mt-12'>Developer is Eating...</h1>
             </div>
+            <Footer></Footer>
         </div>
 
     );
