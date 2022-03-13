@@ -4,10 +4,10 @@ import Navbar from '../Shared/Navbar/Navbar'
 
 const AllBlogs = () => {
     return (
-        <div className='container flex justify-center'>
+        <div className=''>
             <div>
                 <Navbar></Navbar>
-                <div className=''>
+                <div className='container flex justify-center'>
                     <h1 className='mt-12'>Developer is Eating...</h1>
                 </div>
                 <Footer></Footer>

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Pagination.css'
 
-const Pagination = ({ data, RenderComponent, pageLimit, dataLimit }) => {
+const Pagination = ({ place, RenderComponent, pageLimit, dataLimit }) => {
 
-    const [pages] = useState(Math.round(data.length / dataLimit));
+    const [pages] = useState(Math.round(place.length / dataLimit));
     const [currentPage, setCurrentPage] = useState(1);
 
     function goToNextPage() {
@@ -22,7 +22,7 @@ const Pagination = ({ data, RenderComponent, pageLimit, dataLimit }) => {
     const getPaginatedData = () => {
         const startIndex = currentPage * dataLimit - dataLimit;
         const endIndex = startIndex + dataLimit;
-        return data.slice(startIndex, endIndex);
+        return place.slice(startIndex, endIndex);
     };
 
     const getPaginationGroup = () => {
@@ -39,7 +39,7 @@ const Pagination = ({ data, RenderComponent, pageLimit, dataLimit }) => {
             {/* show the posts, 10 posts at a time */}
             <div className="dataContainer grid md:grid-cols-3 gap-4 mb-6">
                 {getPaginatedData().map((d, idx) => (
-                    <RenderComponent key={idx} data={d} />
+                    <RenderComponent key={idx} place={d} />
                 ))}
             </div>
 

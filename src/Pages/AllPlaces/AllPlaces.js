@@ -36,7 +36,7 @@ const AllPlaces = () => {
                                 </Place>)
                             } */}
                             <Pagination
-                                data={places}
+                                place={places}
                                 RenderComponent={Place}
                                 pageLimit={Math.floor(places.length / 6) + 1}
                                 dataLimit={6}
