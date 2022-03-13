@@ -1,11 +1,14 @@
 import './Dashboard.css';
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
-import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import { CgMenuLeft } from 'react-icons/cg';
-import * as IoIcons from 'react-icons/io';
+import { ImBlogger } from "react-icons/im";
+import { MdAddComment } from "react-icons/md";
+import { SiManageiq } from "react-icons/si";
+import { RiAdminFill, RiLogoutCircleRLine } from "react-icons/ri";
+import { BsPencilSquare } from "react-icons/bs";
 import {
     Switch,
     Route,
@@ -56,13 +59,13 @@ const Dashboard = () => {
                         {admin || <div>
                             <li className='nav-text'>
                                 <Link to={`${url}/add_blog`} >
-                                    <AiIcons.AiFillHome />
+                                    <BsPencilSquare />
                                     <span className="nav-span">Add Blog</span>
                                 </Link>
                             </li>
                             <li className='nav-text'>
                                 <Link to={`${url}/my_blogs`} >
-                                    <AiIcons.AiFillHome />
+                                    <ImBlogger />
                                     <span className="nav-span">My Blogs</span>
                                 </Link>
                             </li>
@@ -75,32 +78,33 @@ const Dashboard = () => {
                         {admin && <div>
                             <li className='nav-text'>
                                 <Link to={`${url}/all_blogs`} >
-                                    <AiIcons.AiFillHome />
+                                    <ImBlogger />
                                     <span className="nav-span">Manage All Blogs</span>
                                 </Link>
                             </li>
                             <li className='nav-text'>
                                 <Link to={`${url}/add_place`} >
-                                    <AiIcons.AiFillHome />
+                                    {/* <AiIcons.AiFillHome /> */}
+                                    <MdAddComment />
                                     <span className="nav-span">Add Place</span>
                                 </Link>
                             </li>
                             <li className='nav-text'>
                                 <Link to={`${url}/all_place`} >
-                                    <AiIcons.AiFillHome />
-                                    <span className="nav-span">Manage All Places</span>
+                                    <SiManageiq />
+                                    <span className="nav-span">Manage Places</span>
                                 </Link>
                             </li>
                             <li className='nav-text'>
                                 <Link to={`${url}/make_admin`} >
-                                    <AiIcons.AiFillHome />
+                                    <RiAdminFill />
                                     <span className="nav-span">Make Admin</span>
                                 </Link>
                             </li>
                         </div>}
                         <li className='nav-text'>
                             <button onClick={logOut} className="mt-8 mb-8 py-2 w-48 btn-primary text-white">
-                                <span>Sign Out</span>
+                                <span className='flex justify-center items-center' ><RiLogoutCircleRLine /> <p className='text-white ml-1'>Sign Out</p></span>
                             </button>
                         </li>
 
