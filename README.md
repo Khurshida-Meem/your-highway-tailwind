@@ -1,6 +1,6 @@
 # Your Highway
 
-This project is live on [Live Site](https://your-highway.web.app).
+This project is live on [Live Site](https://your-highway.web.app/home).
 
 ## Available Features
 
