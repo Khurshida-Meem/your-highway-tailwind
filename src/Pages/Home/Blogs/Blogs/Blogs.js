@@ -17,7 +17,7 @@ const Blogs = () => {
     }, [blogs])
 
     const approvedBlogs = blogs.filter(blog => blog.status === 'Approved');
-    approvedBlogs.splice(6, blogs.length);
+    approvedBlogs.splice(8, blogs.length);
 
 
     return (
