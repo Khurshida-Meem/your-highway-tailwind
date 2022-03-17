@@ -45,8 +45,7 @@ const Pagination = ({ place, RenderComponent, pageLimit, dataLimit }) => {
 
             {/* show the pagiantion
         it consists of next and previous buttons
-        along with page numbers, in our case, 5 page
-        numbers at a time
+        along with page numbers.
     */}
             <div className="pagination">
                 {/* previous button */}
