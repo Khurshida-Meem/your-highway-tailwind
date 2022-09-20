@@ -1,6 +1,4 @@
-# Your Highway
-
-This project is live on [Live Site](https://your-highway.web.app/home).
+# Your Highway tailwind version
 
 ## Available Features
 
